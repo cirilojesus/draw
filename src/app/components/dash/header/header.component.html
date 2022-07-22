@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg px-4 py-3 shadow-sm bg-1">
+  <img class="logo" width="56px" src="assets/img/logo.png" role="button" routerLink="/dash/home">
+  <div class="ms-auto d-flex align-items-center gap-4">
+    <div class="dropdown" >
+      <i class="fas fa-bell fs-4 text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      <ul class="dropdown-menu dropdown-1 shadow-sm" aria-labelledby="dropdownMenuButton1" style="right: -24px;">
+        <li class="d-flex px-3 py-2 gap-2 align-items-center dropdown-options">
+          <img class="rounded-circle border-1" width="30px" src="assets/img/placeholder.png">
+          <a>Notificacion uno</a>
+        </li>
+        <li class="d-flex px-3 py-2 gap-2 align-items-center dropdown-options">
+          <img class="rounded-circle border-1" width="30px" src="assets/img/placeholder.png">
+          <a>Notificacion dos</a>
+        </li>
+        <li class="d-flex px-3 py-2 gap-2 align-items-center dropdown-options">
+          <img class="rounded-circle border-1" width="30px" src="assets/img/placeholder.png">
+          <a>Notificacion tres</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <img class="rounded-circle border-1" width="48px" height="48px" src="assets/img/placeholder.png" role="button" data-bs-toggle="dropdown">
+      <ul class="dropdown-menu pt-0 dropdown-1 dropdown-2 shadow-sm">
+        <li class="d-flex gap-3 p-3 mb-2 align-items-center" style="border-radius: 7px 7px 0 0; background: #a5b7e2;">
+          <img class="rounded-circle img-user" width="60px" height="60px" src="assets/img/placeholder.png">
+          <div>
+            <h5 class="text-nowrap mb-0">User name</h5>
+            <span>User email</span>
+          </div>
+        </li>
+        <li >
+          <a class="dropdown-options d-flex align-items-center gap-2" [routerLink]="'ajustes'"><i class="fas fa-cog fs-5"></i> Ajustes</a>
+        </li>
+        <li>
+          <a class="dropdown-options d-flex align-items-center gap-2" routerLink="/auth/sign-in"><i class="fas fa-sign-out-alt fs-5"></i> Cerra Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-center bg-auth">
+  <video class="position-absolute w-100 h-100" style="object-fit: cover;" src="assets/img/bg-video.mp4" autoplay loop muted></video>
+  <div class="my-auto mx-3 p-4 rounded-7 card-auth animate__animated animate__fadeInDown">
+    <div class="d-flex mb-4">
+      <img class="mx-auto" width="250px" height="100px" src="assets/img/logo.png">
+    </div>
+    <form class="row g-3" [formGroup]="SignInForm">
+      <div>
+       <div class="position-relative">
+        <i class="far fa-user position-absolute top-0 m-2 p-1"></i>
+        <input type="email" class="form-control" style="padding-left: 35px;" [ngClass]="{'border-bottom-1' : SignInForm.controls['userOrEmail'].touched && SignInForm.controls['userOrEmail'].invalid}" formControlName="userOrEmail" placeholder="Nombre de usuario">
+       </div>
+        <small class="text-danger" *ngIf="SignInForm.controls['userOrEmail'].touched && SignInForm.controls['userOrEmail'].errors?.required">El nombre de usuario es requerido</small>
+      </div>
+      <div>
+        <div class="position-relative">
+          <i class="fas fa-unlock-alt position-absolute top-0 m-2 p-1"></i>
+          <input class="form-control" style="padding-left: 35px; padding-right: 40px;" [ngClass]="{'border-bottom-1' : SignInForm.controls['password'].touched && SignInForm.controls['password'].invalid}" placeholder="Contraseña" formControlName="password" type="{{view ? 'text' : 'password'}}">
+          <i class="far {{view ? 'fa-eye-slash' : 'fa-eye'}} position-absolute top-0 end-0 m-2 p-1" (click)="view = !view"  role="button"></i>
+        </div>
+        <small class="text-danger" *ngIf="SignInForm.controls['password'].touched && SignInForm.controls['password'].errors?.required">La contraseña es requerida</small>
+      </div>
+      <div>
+        <div class="form-check">
+          <input class="form-check-input" formControlName="remember" type="checkbox" id="remember">
+          <label class="form-check-label" for="remember">
+            Recuerdame
+          </label>
+        </div>
+      </div>
+      <div class="mt-4">
+        <button class="btn btn-1 w-100" routerLink="/dash/home">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
